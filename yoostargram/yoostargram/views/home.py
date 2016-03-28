@@ -1,7 +1,7 @@
 from django.shortcuts import render
 
 
-def home(models.Model):
+def home(request):
     context = {
     }
 

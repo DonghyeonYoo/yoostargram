@@ -5,4 +5,12 @@
 
 {% block content %}
   <h1>LoginView<h1>
+
+    <form action="{% url 'login' %}" method="post" >
+    {% csrf_token %}
+    <input type="text" name="my_username" />
+    <input type='text' name="my_password" />
+    <textarea name="description"></textarea>
+    <input type="submit" />
+  </form>    
 {% endblock %}

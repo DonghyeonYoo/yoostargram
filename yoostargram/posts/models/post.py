@@ -8,7 +8,7 @@ class Post(models.Model):
         max_length=8,
         blank=True,
         null=True,
-        ubique=True,
+        unique=True,
     )
 
     user = models.ForeignKey(
@@ -18,7 +18,7 @@ class Post(models.Model):
     content = models.TextField()
 
     created_at = models.DateTimeField(auto_now_add=True, )
-    updated_at = models.DateTimeField(auto_now=Ture, )
+    updated_at = models.DateTimeField(auto_now=True, )
 
     def init_hash_id(self):
         from hashids import Hashids

@@ -63,3 +63,5 @@ target/
 
 #autoenv .env
 .env
+
+.DS_Store

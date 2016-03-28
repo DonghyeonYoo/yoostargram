@@ -12,6 +12,6 @@ class LogoutView(View):
         messages.add_message(
             request,
             messages.SUCCESS,
-            "logout is SUCCESSED"
+            "logout is SUCCESSED",
         )
         return redirect(reverse("home.html"))

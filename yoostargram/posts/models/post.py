@@ -22,6 +22,7 @@ class Post(models.Model):
 
     def init_hash_id(self):
         from hashids import Hashids
+        from yoostargram.utils.hash_id import get_encoded_hash_id
 
         hashids_object = Hashids(salt="yoodonghyeon", min_length=4)
         hash_id = hashids_object.encode(self.id)

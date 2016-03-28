@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'yoostargram',
     'users',
+    'posts',
 ]
 
 MIDDLEWARE_CLASSES = [

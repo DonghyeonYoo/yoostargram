@@ -2,6 +2,7 @@ from django.contrib.auth import login, authenticate
 from django.views.generic import View
 from django.shortcuts import render, redirect
 from django.core.urlresolvers import reverse
+from django.contrib import messages
 
 
 class LoginView(View):
@@ -26,5 +27,10 @@ class LoginView(View):
 
         if user:
             login(request, user)
+            messages.add_message(
+                request,
+                messages.SUCCESS,
+                "login is successed",
+            )
             return redirect(reverse('home'))
         return redirect(reverse('login'))

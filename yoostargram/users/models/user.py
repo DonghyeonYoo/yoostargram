@@ -3,6 +3,4 @@ from django.db import models
 
 
 class User(AbstractUser):
-    phonenumber = models.CharField(
-        max_length=20,
-    )
+    description =models.TextField()

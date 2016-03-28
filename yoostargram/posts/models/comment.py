@@ -8,7 +8,7 @@ class Comment(models.Model):
         settings.AUTH_USER_MODEL,
     )
     post = models.ForeignKey(
-        "post",
+        "Post",
     )
 
     content = models.TextField()

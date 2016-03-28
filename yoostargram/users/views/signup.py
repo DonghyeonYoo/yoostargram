@@ -1,5 +1,9 @@
 from django.views.generic import View
 from django.shortcuts import render
+from django.core.urlresolvers import reverse
+from django.shortcuts import render, redirect
+from django.contrib.auth import get_user_model
+from django.contrib.auth.models import User
 
 
 class SignupView(View):
@@ -12,4 +16,14 @@ class SignupView(View):
         )
 
     def post(self, request):
-        pass
+        username = request.POST.get("username")
+        password = request.POST.get("password")
+        description = request.POST.get("description")
+
+        user = get_user_model().objects.create_user(
+            username=username,
+            password=password,
+            description=description,
+        )
+
+        return redirect(reverse("home"))

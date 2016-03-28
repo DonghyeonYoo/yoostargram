@@ -3,7 +3,6 @@ from django.conf import settings
 
 
 class Comment(models.Model):
-    
     user = models.ForeignKey(
         settings.AUTH_USER_MODEL,
     )

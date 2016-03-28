@@ -14,4 +14,4 @@ class LogoutView(View):
             messages.SUCCESS,
             "logout is SUCCESSED",
         )
-        return redirect(reverse("home.html"))
+        return redirect(reverse("home"))

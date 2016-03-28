@@ -21,10 +21,6 @@ class Post(models.Model):
     updated_at = models.DateTimeField(auto_now=True, )
 
     def init_hash_id(self):
-        from hashids import Hashids
         from yoostargram.utils.hash_id import get_encoded_hash_id
-
-        hashids_object = Hashids(salt="yoodonghyeon", min_length=4)
-        hash_id = hashids_object.encode(self.id)
-        self.hash_id = hash_id
+        self.hash_id = get_encoded_hash_id(self)
         self.save()

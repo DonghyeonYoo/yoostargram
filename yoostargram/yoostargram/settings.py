@@ -28,7 +28,7 @@ INSTALLED_APPS = [
     'yoostargram',
     'users',
     'posts',
-    'tag',
+    'tags',
 ]
 
 MIDDLEWARE_CLASSES = [

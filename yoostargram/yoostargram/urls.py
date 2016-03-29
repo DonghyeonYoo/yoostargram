@@ -10,6 +10,8 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', home, name='home'),
     url(r'^posts/$', PostListView.as_view(), name='posts'),
+    url(r'^posts/(?P<pk>\d+)/$', PostDetailView.as_view(), name='post'),
+    url(r'^posts/(?P<pk>\d+)/comments/$', post_comments, name='post-comments'),
     url(r'^login/$', LoginView.as_view(), name='login'),
     url(r'^logout/$', LogoutView.as_view(), name='logout'),
     url(r'^signup/$', SignupView.as_view(), name='signup'),

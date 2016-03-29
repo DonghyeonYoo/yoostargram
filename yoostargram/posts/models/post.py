@@ -1,5 +1,6 @@
 from django.db import models
 from django.conf import settings
+from django.core.urlresolvers import reverse
 
 
 class Post(models.Model):
@@ -24,3 +25,11 @@ class Post(models.Model):
         from yoostargram.utils.hash_id import get_encoded_hash_id
         self.hash_id = get_encoded_hash_id(self)
         self.save()
+
+    def get_absolute_url(self):
+        return reverse(
+            "posts",
+            kwargs={
+                "pk": post.id,
+            }
+        )

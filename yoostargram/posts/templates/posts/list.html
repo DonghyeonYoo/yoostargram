@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block title %}Post List :: yoostargram{% endblock %}
+
+{% block content %}
+  <h1>Post List</h1>
+  <p>This is Post List page</p>
+  <ul>
+    {% for post in posts %}
+      <li>{{ post.title }}</li>
+    {% endfor %}
+  </ul>
+<form action="/posts/" method="post">
+  {% csrf_token %}
+  <input type="text" name="title">
+  <textarea name="content"></textarea>
+  <input type="submit" />
+</form>
+{% endblock %}

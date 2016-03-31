@@ -65,13 +65,16 @@ WSGI_APPLICATION = 'yoostargram.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/1.9/ref/settings/#databases
+DATABASE_NAME = os.environ.get("DATABASE_NAME")
+DATABASE_USER = os.environ.get("DATABASE_USER")
+DATABASE_PASSWORD = os.environ.get("DATABASE_PASSWORD")
 
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': 'yoostargram',
-        'USER': 'name',
-        'PASSWORD': "wkdsks12",
+        'NAME': DATABASE_NAME,
+        'USER': DATABASE_USER,
+        'PASSWORD': DATABASE_PASSWORD,
         'HOST': 'localhost',
         'POST': "",
     }

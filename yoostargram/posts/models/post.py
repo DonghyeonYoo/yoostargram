@@ -25,6 +25,7 @@ class Post(models.Model):
 
     tag_set = models.ManyToManyField(
         Tag,
+        blank=True,
     )
 # related_name ="post_set" 으로 자동으로 만들어줌
 # 그래서 shell에서 tag.post_set.all()하면 찾을수있다.

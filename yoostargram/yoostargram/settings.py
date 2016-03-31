@@ -69,7 +69,11 @@ WSGI_APPLICATION = 'yoostargram.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'NAME': 'yoostargram',
+        'USER': 'name',
+        'PASSWORD': "wkdsks12",
+        'HOST': 'localhost',
+        'POST': "",
     }
 }
 

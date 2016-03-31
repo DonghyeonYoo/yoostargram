@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block title %}{{ post.id }} ::패스트블로그{% endblock %}
+
+{% block content %}
+<h1>{{ post.id }}<h1>
+<p>{{ post.content }}</p>
+
+<h2>All Comments ( {{ post.comment_set.count }} )</h2>
+<ul>
+  {% for comment in post.comment_set.all %}
+    <li>{{ comment.content }} by @ {{ comment.user.username }}</li>>>
+  {% endfor%}
+</ul>
+
+<form action="/posts/{{ post.id }}/comments/" method="post">
+  {% csrf_token %}
+  <input type="text" name="content">
+  <input tpye="submit">
+</form>
+{% endblock %}

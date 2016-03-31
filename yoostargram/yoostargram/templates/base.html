@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{% block title %}{% endblock %} | 패스타그램</title>
+  </head>
+  <body>
+    {% include "parcials/header.html" %}
+
+    <section id="content">
+      {% block content%}
+      {% endblock %}
+    </section>
+
+    {% include "parcials/footer.html" %}
+  </body>  
+</html>
